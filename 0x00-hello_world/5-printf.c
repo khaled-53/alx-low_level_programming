@@ -1,5 +1,12 @@
 #include <stdio.h>
-/**main - description used to print some words*/
+/**
+ *  * main - Entry point of the program
+ *   *
+ *    * Description: This program demonstrates the usage of the puts function
+ *     * to print a string to the standard output.
+ *      *
+ *       * Return: Always 0 (success)
+ *        */
 int main(void)
 {
 	printf("with proper grammar, but the outcome is a piece of art,\n");
