@@ -1,49 +1,47 @@
 #include "main.h"
 
 /**
- * print_times_table - Prints a multiplication table up to a specified number.
- * @n: The highest number for the multiplication table (1 to 15 inclusive).
+ * print_times_table - prints the n times table, starting with 0
+ * @n: number of the times table
  */
 void print_times_table(int n)
 {
-	int num, mult, prod;
+	int i, j, k;
 
-	if (n <= 0 || n > 15)
+	if (n >= 0 && n <= 15)
 	{
-		_putchar('\n');
-		return;
-	}
-	for (num = 0; num <= n; num++)
-	{
-		for (mult = 0; mult <= n; mult++)
+		for (i = 0; i <= n; i++)
 		{
-			prod = num * mult;
-
-			if (mult > 0)
+			for (j = 0; j <= n; j++)
 			{
-				_putchar(',');
-				_putchar(' ');
+				k = j * i;
+				if (j == 0)
+				{
+					_putchar(k + '0');
+				} else if (k < 10 && j != 0)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(k + '0');
+				} else if (k >= 10 && k < 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar((k / 10) + '0');
+					_putchar((k % 10) + '0');
+				} else if (k >= 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar((k / 100) + '0');
+					_putchar(((k / 10) % 10) + '0');
+					_putchar((k % 10) + '0');
+				}
 			}
-			if (prod <= 9 && mult > 0)
-			{
-				_putchar(' ');
-				_putchar(' ');
-			}
-			else if (prod >= 10 && prod <= 99)
-			{
-				_putchar(' ');
-			}
-			if (prod >= 100)
-			{
-				_putchar((prod / 100) + '0');
-				_putchar(((prod / 10) % 10) + '0');
-			}
-			else if (prod >= 10)
-			{
-				_putchar((prod / 10) + '0');
-			}
-			_putchar((prod % 10) + '0');
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
