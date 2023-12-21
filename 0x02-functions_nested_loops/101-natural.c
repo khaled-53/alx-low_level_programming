@@ -5,7 +5,7 @@
  *
  * Return: Always 0 (success)
  */
-int naturalsum(void)
+void naturalsum(void)
 {
 	int sum = 0;
 
@@ -17,5 +17,4 @@ int naturalsum(void)
 		}
 	}
 	printf("%d\n", sum);
-	return (0);
 }
